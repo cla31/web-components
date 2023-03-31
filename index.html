@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+
+<body>
+    <!-- Partie 3 vidéo 1 -->
+    <!-- Exemple du fichier de la partie 2
+    (super-heros.js appliqué dans un cas réel) -->
+    <!-- Ici on a une page html classique qui permet d'illustrer la création
+    d'un élément personnalisé -->
+    <!-- 1. Injection du script crée dans la page super-heros.js
+    2. lancer la page -->
+    <script>
+        // On crée un prototype pour notre élément personnalisé
+        var superHerosPrototype = Object.create(HTMLElement.prototype)
+
+        // On va en profiter pour utiliser les callbacks de cycle de vie
+        // Et on rajoute un template à notre composant 
+        //( code à exécuter lors de la création de notre prototype)
+        superHerosPrototype.createdCallBack = function() {
+            this.innerHTML = '<h1>Superman</h1>'
+        };
+
+        // On crée notre élément personnalisé avec document.registerElement
+        var SuperHerosElement = document.registerElement('super-heros', {
+            prototype: superHerosPrototype
+        });
+
+        //On peut ensuite utiliser notre élément simplement
+        document.body.appendChild(new SuperHerosElement());
+    </script>
+    <!-- ATTENTION!!! Ce code n'est plus valable depuis 2019 et donc ne fonctionne pas!!!
+cf index2.html -->
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!-- Partie 1  video 1 https://www.youtube.com/watch?v=Iuafu7f01yE&list=PLhVogk7htzNgctPG3iB5PHx8_28BNQeSd-->
+
+<!-- Le premier des 4 standards qui forme les web component est 
+la notion des éléments personnalisés. -->
+<!-- Ils permettent de créer des balises html différentes des balises traditionnelles 
+ds les pages web, selon les besoins de l'appli. -->
+<!-- Intérêt de ces éléments personalisés? -->
+<!-- Attention ce code n'est pas valide au validator!! -->
+<!-- Pas standard car trop personnalisé (les autres dev ne s'y retrouve pas)
+ et en plus on ne profite pas des spécifications des web components 
+ En respectant les satandards des components web, on profite d'un code valide, 
+ respecté par tous les dev -->
+<!-- + autre fonctionnalités, les life cycle callback qui permettent
+ d'ajouter des évènements de cycle de vie à nos composants -->
+
+<!-- Je crée une balise au hasard -->
+<une-balise-inventee></une-balise-inventee>
+
+<style>
+    /* Je rajoute un peu de style à ma nouvelle balise */
+    
+    une-balise-inventee {
+        width: 200px;
+        height: 50px;
+        border: 1px solid orange;
+    }
+</style>
+
+<script>
+    // Ce script permet d'afficher le nombre de balises personnalisées sur la page
+    var elementPerso = document.getElementsByTagName("une-balise-inventee");
+    var quantite = elementPerso.length;
+    alert("Il y a " + quantite + "éléments <une-balise-inventee> dans ce document.");
+</script>
+
+<!-- Plutôt que de créer nos propre balise, autant créer des 
+éléments personnalisés avec des web component.
+cf.... -->
