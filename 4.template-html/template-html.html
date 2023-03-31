@@ -1,0 +1,23 @@
+<!-- Ils permettent de déclarer des petits morceaux de html
+ qui ne seront pas chargés quand la page s'affichera pour la première fois, mais qui pourront être copiés, complétés
+ et inséré ds le document grâce à JS.
+On pourrait parler de module html 
+template est un mot clé qui permet de déclarer des templates html-->
+
+<template id="hero-template">
+    <style>
+        h1{color:green;}
+    </style>
+    <h1>Green Lantern</h1>
+</template>
+<script>
+    //On reprend notre élément personnalisé précédent 'super-hero'
+    superHerosPrototype.createdCallback = function() {
+        //On récupère notre template html en JavaScript
+        var template = document.querySelector('hero-template');
+        //On crée une copie de notre élémnt 'template'
+        var copie = document.importNode(template.content, true);
+        //On insère notre template html dans un shadow DOM
+        this.createShadowRoot().appendChild(copie);
+    }
+</script>
