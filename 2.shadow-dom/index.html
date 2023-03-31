@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="paragraphe-shadow"></p>
+    <script>
+        // La méthode createShadowRoot permet d'instancier un nouveau
+        // Shadow Dom et ne prend aucun paramètre
+
+        var shadow = document.querySelector('#paragraphe-shadow').createShadowRoot();
+
+        // Pour l'instant notre Shadow Dom est vide,
+        // mais nous pouvons lui ajouter du contenu
+
+        shadow.innerHTML = "<p id='shadow'>Salut, Shadow DOM!</p>"
+
+        // Si on cherche notre contenu caché depuis la console du navigateur, 
+        // alors la commande précédente ne retourne rien,
+        // car le DOM n'a pas accès au shadow DOM!
+        document.querySelectorAll('paragraphe-shadow')
+    </script>
+    <!-- Attention, depuis 2019,a méthode createShadowRoot() a été supprimée à partir de la spécification Web Components  -->
+    <!-- Cf index2.html -->
+</body>
+
+</html>
