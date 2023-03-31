@@ -1,0 +1,22 @@
+<!-- Ici nous voyons le standard qu'il nous manque
+pour dev de véritablesde véritables composants web: 
+Les imports HTML -->
+<!-- Ce module html fonctionne en autonomie,
+avec son js, son style et il ne vient pas interférer
+avec la page principale grâce au DOM de l'ombre. -->
+<!-- cf https://customelemnts.io propose même des composants prêts à l'emploi -->
+<!-- cf aussi https://www.polymer-project.org/ -->
+
+<!-- Ici, on va importer un composant web dvppé par google
+dans la page web-->
+<!-- polyfill permet de simuler des composant web sur des navigateurs plus ancien -->
+
+<!-- Exemple d'utilisation -->
+<!-- **** Cas d'utilisation **** -->
+<link rel="import" href="un-autre-fichier.html">
+<script src="components/webcomponents.js/webcomponents-lite.min.js"></script>
+<!-- Un import html -->
+<link rel="import" href="components/google-map/google-map.html">
+<!-- On utilise l'élément personnalisé importé -->
+<google-map latitude="37.790" longitude="-122.390"></google-map>
+<!-- Ce code permet d'afficher une map google centrée sur San Francisco -->
